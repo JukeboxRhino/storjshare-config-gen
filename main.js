@@ -37,7 +37,7 @@ function init(){
 					],
 					required: true,
 					type: 'array',
-					description: 'Network protocol opcode subscriptions. Don\'t change these unless you know what you\'re doing.'
+					description: 'Network protocol opcode subscriptions. Don\'t change these unless you know what you\'re doing. <a href="https://storj.github.io/core/tutorial-contract-topics.html">More info available here</a>'
 				},
 				{
 					key: 'maxOfferConcurrency',
@@ -61,7 +61,7 @@ function init(){
 					value: [],
 					required: false,
 					type: 'array',
-					description: 'List of peer URIs to connect to upon startup. Defaults to empty.'
+					description: 'List of peer URIs to connect to upon startup, in the form <code>storj://[ip.or.hostname]:[port]/[nodeid]</code>. Defaults to empty.'
 				},
 				{
 					key: 'rpcAddress',
@@ -93,6 +93,7 @@ function init(){
 					value: 150,
 					required: true,
 					type: 'number',
+					description: 'Maximum number of concurrent connections to allow'
 				},
 				{
 					key: 'maxTunnels',
@@ -110,6 +111,7 @@ function init(){
 					},
 					required: true,
 					type: 'object',
+					description: 'Starting and ending port range for tunnels to provide'
 				},
 				{
 					key: 'joinRetry',
@@ -152,7 +154,7 @@ function init(){
 					value: 'FAKEPATH/.config/storjshare/logs/log.log',
 					required: true,
 					type: 'string',
-					description: 'The path to the log file for your node.'
+					description: 'The path to the log file for your node. If empty defaults to <code>$HOME/.config/storjshare/logs/[nodeid].log</code>'
 				},
 				{
 					key: 'storagePath',
@@ -165,10 +167,10 @@ function init(){
 				{
 					key: 'storageAllocation',
 					title: 'Storage Allocation',
-					value: 1073741824,
+					value: '10GB',
 					required: true,
 					type: 'number',
-					description: 'Storage allocation in bytes to make available for rent.'
+					description: 'Storage allocation in bytes to make available for rent. Valid units are B, KB, MB, GB, TB'
 				},
 				{
 					key: 'enableTelemetryReporting',
