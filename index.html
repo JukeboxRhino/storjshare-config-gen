@@ -12,7 +12,7 @@
 </div>
 <div id="app">
 	<div id="left">
-		<div class="option" v-for="option in config">
+		<div class="option" v-for="option in config" v-bind:class="{disabled: !option.required && !option.enabled}">
 			<h3>{{option.title || option.key}}</h3>
 			<p v-html="option.description"></p>
 			<input v-if="option.type === 'string'" v-model="option.value">
@@ -34,6 +34,9 @@
 					<span>{{key}}</span>
 					<input v-model="option.value[key]">
 				</div>
+			</div>
+			<div v-if="!option.required" class="switch" v-on:click="option.enabled = !option.enabled">
+				<div class="slider" v-bind:slider="option.enabled"></div>
 			</div>
 		</div>
 	</div>

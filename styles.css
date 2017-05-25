@@ -31,14 +31,6 @@
 	height: 100%;
 }
 
-.option {
-	box-shadow: 5px 5px 20px gray inset;
-	margin: 20px;
-	padding: 5px 30px 20px 30px;
-	border-radius: 5px;
-	background-color: lightgray;
-}
-
 .array {
 	display: inline-block;
 	box-sizing: border-box;
@@ -46,17 +38,29 @@
 	width: 100%;
 }
 
-.remove {
-	float: left;
+.disabled {
+	pointer-events: none;
+	opacity: 0.4;
 }
 
-.switch {
-	border: none;
+.download {
+	text-decoration: none;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 3px;
+	color: black;
+}
+
+.download:hover {
+	background-color: lightgray;
+}
+
+.option {
+	box-shadow: 5px 5px 20px gray inset;
+	margin: 20px;
+	padding: 5px 30px 20px 30px;
 	border-radius: 5px;
-	width: 40px;
-	height: 20px;
-	background-color: gray;
-	cursor: pointer;
+	background-color: lightgray;
 }
 
 .slider {
@@ -72,16 +76,17 @@
 	float: right;
 }
 
-.download {
-	text-decoration: none;
-	border: 1px solid black;
-	border-radius: 3px;
-	padding: 3px;
-	color: black;
+.remove {
+	float: left;
 }
 
-.download:hover {
-	background-color: lightgray;
+.switch {
+	border: none;
+	border-radius: 5px;
+	width: 40px;
+	height: 20px;
+	background-color: gray;
+	cursor: pointer;
 }
 
 a {

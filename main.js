@@ -3,6 +3,7 @@ let mix = {
 		configToJSON: function(arr) {
 			let output = {};
 			arr.forEach((item) => {
+				if(item.required || item.enabled)
 				output[item.key] = item.value;
 			});
 			return JSON.stringify(output, null, '\t');
