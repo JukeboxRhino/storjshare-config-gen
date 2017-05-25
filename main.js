@@ -61,7 +61,7 @@ function init(){
 					value: [],
 					required: false,
 					type: 'array',
-					description: 'List of peers to connect to upon startup. Defaults to empty.'
+					description: 'List of peer URIs to connect to upon startup. Defaults to empty.'
 				},
 				{
 					key: 'rpcAddress',
@@ -127,6 +127,7 @@ function init(){
 					value: 4,
 					required: true,
 					type: 'number',
+					description: 'Does not send offers if more than N transfers are active'
 				},
 				{
 					key: 'networkPrivateKey',
