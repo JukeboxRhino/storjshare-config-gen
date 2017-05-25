@@ -151,7 +151,7 @@ function init(){
 				{
 					key: 'loggerOutputFile',
 					title: 'Logger Output File',
-					value: 'FAKEPATH/.config/storjshare/logs/log.log',
+					value: '',
 					required: true,
 					type: 'string',
 					description: 'The path to the log file for your node. If empty defaults to <code>$HOME/.config/storjshare/logs/[nodeid].log</code>'
