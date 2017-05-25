@@ -13,7 +13,7 @@
 <div id="app">
 	<div id="left">
 		<div class="option" v-for="option in config">
-			<h3>{{option.key}}</h3>
+			<h3>{{option.title || option.key}}</h3>
 			<p>{{option.description}}</p>
 			<input v-if="option.type === 'string'" v-model="option.value">
 			<input v-if="option.type === 'number'" type="number" v-model.number="option.value" v-bind:min="option.min || 0" v-bind:max="option.max || false">
@@ -28,6 +28,12 @@
 					<button class="remove" v-on:click="option.value.splice(i, 1)">-</button>
 				</div>
 				<button v-on:click="option.value.push('')">+</button>
+			</div>
+			<div class="object" v-if="option.type === 'object'">
+				<div v-for="(value, key) in option.value">
+					<span>{{key}}</span>
+					<input v-model="option.value[key]">
+				</div>
 			</div>
 		</div>
 	</div>

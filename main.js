@@ -21,6 +21,7 @@ function init(){
 			config: [
 				{
 					key: 'paymentAddress',
+					title: 'Payment Address',
 					value: '',
 					required: true,
 					type: 'string',
@@ -28,6 +29,7 @@ function init(){
 				},
 				{
 					key: 'opcodeSubscriptions',
+					title: 'Opcode Subscriptions',
 					value: [
 					'0f01020202',
 					'0f02020202',
@@ -39,6 +41,7 @@ function init(){
 				},
 				{
 					key: 'maxOfferConcurrency',
+					title: 'Maximum Offer Concurrency',
 					value: 3,
 					required: true,
 					type: 'number',
@@ -46,6 +49,7 @@ function init(){
 				},
 				{
 					key: 'bridgeUri',
+					title: 'Bridge URI',
 					value: 'https://api.storj.io',
 					required: true,
 					type: 'string',
@@ -53,6 +57,7 @@ function init(){
 				},
 				{
 					key: 'seedList',
+					title: 'Seed List',
 					value: [],
 					required: false,
 					type: 'array',
@@ -60,6 +65,7 @@ function init(){
 				},
 				{
 					key: 'rpcAddress',
+					title: 'RPC Address',
 					value: '127.0.0.1',
 					required: true,
 					type: 'string',
@@ -67,6 +73,7 @@ function init(){
 				},
 				{
 					key: 'rpcPort',
+					title: 'RPC Port',
 					value: 47918,
 					required: true,
 					type: 'number',
@@ -74,6 +81,7 @@ function init(){
 				},
 				{
 					key: 'doNotTraverseNat',
+					title: 'Do Not Traverse Nat',
 					value: false,
 					required: true,
 					type: 'boolean',
@@ -81,18 +89,21 @@ function init(){
 				},
 				{
 					key: 'maxTunnels',
+					title: 'Max Tunnels',
 					value: 3,
 					required: true,
 					type: 'number',
 				},
 				{
 					key: 'maxConnections',
+					title: 'Max Connections',
 					value: 150,
 					required: true,
 					type: 'number',
 				},
 				{
 					key: 'tunnelGatewayRange',
+					title: 'Tunnel Gateway Range',
 					value: {
 						min: 4001,
 						max: 4003
@@ -102,6 +113,7 @@ function init(){
 				},
 				{
 					key: 'joinRetry',
+					title: 'Join Retry',
 					value: {
 						times: 3,
 						interval: 5000
@@ -111,12 +123,14 @@ function init(){
 				},
 				{
 					key: 'offerBackoffLimit',
+					title: 'Offer Backoff Limit',
 					value: 4,
 					required: true,
 					type: 'number',
 				},
 				{
 					key: 'networkPrivateKey',
+					title: 'Network Private Key',
 					value: '',
 					required: true,
 					type: 'string',
@@ -124,6 +138,7 @@ function init(){
 				},
 				{
 					key: 'loggerVerbosity',
+					title: 'Logger Verbosity',
 					value: 3,
 					required: true,
 					type: 'number',
@@ -132,6 +147,7 @@ function init(){
 				},
 				{
 					key: 'loggerOutputFile',
+					title: 'Logger Output File',
 					value: 'FAKEPATH/.config/storjshare/logs/log.log',
 					required: true,
 					type: 'string',
@@ -139,6 +155,7 @@ function init(){
 				},
 				{
 					key: 'storagePath',
+					title: 'Storage Path',
 					value: 'FAKEPATH/storage',
 					required: true,
 					type: 'string',
@@ -146,6 +163,7 @@ function init(){
 				},
 				{
 					key: 'storageAllocation',
+					title: 'Storage Allocation',
 					value: 1073741824,
 					required: true,
 					type: 'number',
@@ -153,6 +171,7 @@ function init(){
 				},
 				{
 					key: 'enableTelemetryReporting',
+					title: 'Enable Telemetry Reporting',
 					value: true,
 					required: true,
 					type: 'boolean',
