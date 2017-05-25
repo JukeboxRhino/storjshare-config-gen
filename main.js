@@ -88,16 +88,16 @@ function init(){
 					description: 'Set to true if you have port forwarding set up or you are otherwise reachable from the outside. Otherwise, leave as false.'
 				},
 				{
-					key: 'maxTunnels',
-					title: 'Max Tunnels',
-					value: 3,
+					key: 'maxConnections',
+					title: 'Max Connections',
+					value: 150,
 					required: true,
 					type: 'number',
 				},
 				{
-					key: 'maxConnections',
-					title: 'Max Connections',
-					value: 150,
+					key: 'maxTunnels',
+					title: 'Max Tunnels',
+					value: 3,
 					required: true,
 					type: 'number',
 				},
