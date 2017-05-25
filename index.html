@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Storjshare Config Generator</title>
+<script src="vue.js"></script>
+<script src="main.js"></script>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div id="title">
+	<h1>Storj Share Config Generator</h1>
+</div>
+<div id="app">
+	<div id="left">
+		<div class="option" v-for="option in config">
+			<h3>{{option.key}}</h3>
+			<p>{{option.description}}</p>
+			<input v-if="option.type === 'string'" v-model="option.value">
+			<input v-if="option.type === 'number'" type="number" v-model.number="option.value" v-bind:min="option.min || 0" v-bind:max="option.max || false">
+			<div v-if="option.type === 'boolean'">
+				<div class="switch" v-on:click="option.value = !option.value">
+				  <div class="slider" v-bind:slider="option.value"></div>
+				</div>
+			</div>
+			<div class="array" v-if="option.type === 'array'">
+				<div v-for="(item, i) in option.value">
+					<input v-model="option.value[i]">
+					<button class="remove" v-on:click="option.value.splice(i, 1)">-</button>
+				</div>
+				<button v-on:click="option.value.push('')">+</button>
+			</div>
+		</div>
+	</div>
+	<div id="right">
+		<pre id="output">{{configToJSON(config)}}</pre>
+		<a class="download" download="config.json" v-bind:href="'data:text/plain;charset=utf-8,' + encodeURIComponent(configToJSON(config))">Download Config</a>
+	</div>
+</div>
+</body>
+</html>
