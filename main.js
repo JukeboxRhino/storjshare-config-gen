@@ -80,6 +80,27 @@ function init(){
 					description: 'Set to true if you have port forwarding set up or you are otherwise reachable from the outside. Otherwise, leave as false.'
 				},
 				{
+					key: 'maxTunnels',
+					value: 3,
+					required: true,
+					type: 'number',
+				},
+				{
+					key: 'maxConnections',
+					value: 150,
+					required: true,
+					type: 'number',
+				},
+				{
+					key: 'tunnelGatewayRange',
+					value: {
+						min: 4001,
+						max: 4003
+					},
+					required: true,
+					type: 'object',
+				},
+				{
 					key: 'joinRetry',
 					value: {
 						times: 3,
