@@ -176,6 +176,13 @@ function init(){
 					required: true,
 					type: 'boolean',
 					description: 'Allows your client to send telemetry data to Storj Labs to improve Storj Share. You will receive compensation for leaving it enabled.'
+				},
+				{
+					key: 'renterWhitelist',
+					title: 'Renter Whitelist',
+					value: [],
+					required: false,
+					type: 'array',
 				}
 			]
 		}
