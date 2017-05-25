@@ -29,13 +29,6 @@
 				</div>
 				<button v-on:click="option.value.push('')">+</button>
 			</div>
-			<div class="object" v-if="option.type === 'object'">
-				<div v-for="(item, i) in option.value">
-					<input v-model="option.value[i]">
-					<button class="remove" v-on:click="option.value.splice(i, 1)">-</button>
-				</div>
-				<button v-on:click="option.value.push('')">+</button>
-			</div>
 		</div>
 	</div>
 	<div id="right">
