@@ -1,3 +1,8 @@
+//Generate a new storj keypair on every page load so users can download a working config
+const storj = new Storj();
+const keypair = storj.generateKeyPair();
+const privateKey = keypair.getPrivateKey();
+
 let mix = {
 	methods: {
 		configToJSON: function(arr) {
@@ -135,7 +140,7 @@ function init(){
 				{
 					key: 'networkPrivateKey',
 					title: 'Network Private Key',
-					value: '',
+					value: privateKey,
 					required: true,
 					type: 'string',
 					description: 'Your hex private key.'
