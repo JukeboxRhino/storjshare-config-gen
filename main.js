@@ -66,6 +66,7 @@ function init(){
 					title: 'Seed List',
 					value: [],
 					required: false,
+					enabled: false,
 					type: 'array',
 					description: 'List of peer URIs to connect to upon startup, in the form <code>storj://[ip.or.hostname]:[port]/[nodeid]</code>. Defaults to empty.'
 				},
@@ -191,6 +192,7 @@ function init(){
 					title: 'Renter Whitelist',
 					value: [],
 					required: false,
+					enabled: false,
 					type: 'array',
 				}
 			]

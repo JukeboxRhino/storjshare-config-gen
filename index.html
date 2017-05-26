@@ -13,31 +13,33 @@
 </div>
 <div id="app">
 	<div id="left">
-		<div class="option" v-for="option in config" v-bind:class="{disabled: !option.required && !option.enabled}">
+		<div class="option" v-for="option in config">
 			<h3>{{option.title || option.key}}</h3>
-			<p v-html="option.description"></p>
-			<input v-if="option.type === 'string'" v-model="option.value">
-			<input v-if="option.type === 'number'" type="number" v-model.number="option.value" v-bind:min="option.min || 0" v-bind:max="option.max || false">
-			<div v-if="option.type === 'boolean'">
-				<div class="switch" v-on:click="option.value = !option.value">
-				  <div class="slider" v-bind:slider="option.value"></div>
-				</div>
-			</div>
-			<div class="array" v-if="option.type === 'array'">
-				<div v-for="(item, i) in option.value">
-					<input v-model="option.value[i]">
-					<button class="remove" v-on:click="option.value.splice(i, 1)">-</button>
-				</div>
-				<button v-on:click="option.value.push('')">+</button>
-			</div>
-			<div class="object" v-if="option.type === 'object'">
-				<div v-for="(value, key) in option.value">
-					<span>{{key}}</span>
-					<input v-model="option.value[key]">
-				</div>
-			</div>
 			<div v-if="!option.required" class="switch" v-on:click="option.enabled = !option.enabled">
 				<div class="slider" v-bind:slider="option.enabled"></div>
+			</div>
+			<div v-bind:class="{disabled: !option.required && !option.enabled}">
+				<p v-html="option.description"></p>
+				<input v-if="option.type === 'string'" v-model="option.value">
+				<input v-if="option.type === 'number'" type="number" v-model.number="option.value" v-bind:min="option.min || 0" v-bind:max="option.max || false">
+				<div v-if="option.type === 'boolean'">
+					<div class="switch" v-on:click="option.value = !option.value">
+					  <div class="slider" v-bind:slider="option.value"></div>
+					</div>
+				</div>
+				<div class="array" v-if="option.type === 'array'">
+					<div v-for="(item, i) in option.value">
+						<input v-model="option.value[i]">
+						<button class="remove" v-on:click="option.value.splice(i, 1)">-</button>
+					</div>
+					<button v-on:click="option.value.push('')">+</button>
+				</div>
+				<div class="object" v-if="option.type === 'object'">
+					<div v-for="(value, key) in option.value">
+						<span>{{key}}</span>
+						<input v-model="option.value[key]">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
