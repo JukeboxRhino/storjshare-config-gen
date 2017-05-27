@@ -51,7 +51,8 @@ function init(){
 					value: 3,
 					required: true,
 					type: 'number',
-					description: 'Maximum outstanding offers to manage at one time. 3 is the reccommended value for desktops, however on low memory machines it is often necessary to lower it to 2 or 1 (Raspberry Pi users will want to set it to 1).'
+					description: 'Maximum outstanding offers to manage at one time. 3 is the reccommended value for desktops, however on low memory machines it is often necessary to lower it to 2 or 1 (Raspberry Pi users will want to set it to 1).',
+					min: 1
 				},
 				{
 					key: 'bridgeUri',
@@ -136,7 +137,8 @@ function init(){
 					value: 4,
 					required: true,
 					type: 'number',
-					description: 'Does not send offers if more than N transfers are active'
+					description: 'Does not send offers if more than N transfers are active',
+					min: 1
 				},
 				{
 					key: 'networkPrivateKey',
