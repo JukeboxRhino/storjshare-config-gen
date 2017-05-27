@@ -176,7 +176,7 @@ function init(){
 					title: 'Storage Allocation',
 					value: '10GB',
 					required: true,
-					type: 'number',
+					type: 'string',
 					description: 'Storage allocation in bytes to make available for rent. Valid units are B, KB, MB, GB, TB'
 				},
 				{
