@@ -1,7 +1,5 @@
 //Generate a new storj keypair on every page load so users can download a working config
-const storj = new Storj();
-const keypair = storj.generateKeyPair();
-const privateKey = keypair.getPrivateKey();
+const privateKey = new Storj().generateKeyPair().getPrivateKey();
 
 let mix = {
 	methods: {
@@ -13,8 +11,12 @@ let mix = {
 			});
 			return JSON.stringify(output, null, '\t');
 		},
-		downloadConfig: function() {
-
+		generateNewPrivateKey: function() {
+			let pkeyIndexFinder = function(option) {
+				return option.key === 'networkPrivateKey'
+			}
+			let pkeyIndex = this.config.findIndex(pkeyIndexFinder);
+			this.config[pkeyIndex].value = new Storj().generateKeyPair().getPrivateKey();
 		}
 	}
 }
