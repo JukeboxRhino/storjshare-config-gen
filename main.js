@@ -1,3 +1,9 @@
+//Check to see whether the browser supports the File API
+let fileAPISupport = false;
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+  fileAPISupport = true;
+}
+
 //Generate a new storj keypair on every page load so users can download a working config
 const privateKey = new Storj().generateKeyPair().getPrivateKey();
 
@@ -198,6 +204,7 @@ function init(){
 					required: false,
 					enabled: false,
 					type: 'array',
+					description: 'Node IDs to offer storage to. Will not offer storage to any other nodes.'
 				}
 			]
 		}

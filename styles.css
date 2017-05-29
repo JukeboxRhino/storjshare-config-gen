@@ -38,12 +38,7 @@
 	width: 100%;
 }
 
-.disabled {
-	pointer-events: none;
-	opacity: 0.4;
-}
-
-.download {
+.button {
 	text-decoration: none;
 	border: 1px solid black;
 	border-radius: 3px;
@@ -51,8 +46,13 @@
 	color: black;
 }
 
-.download:hover {
+.button:hover {
 	background-color: lightgray;
+}
+
+.disabled {
+	pointer-events: none;
+	opacity: 0.4;
 }
 
 .option {
